@@ -91,7 +91,7 @@ export const AboutSection = () => {
         <SectionHeader
           eyebrow="About Me"
           title="A Glimpse Into My World"
-          description="Learn more about who I am, What I do,"
+          description="Learn more about who I am, What I do, and what inspires me."
         />
 
         <div className="mt-20 flex flex-col gap-8">
