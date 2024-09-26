@@ -19,7 +19,7 @@ export default function Card({
         <div
           className="absolute inset-0 opacity-5 -z-10"
           style={{
-            backgroudImage: `url(${grainImage.src})`,
+            backgroundImage: `url(${grainImage.src})`,
           }}
         ></div>
         {children}
