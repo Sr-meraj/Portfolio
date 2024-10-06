@@ -8,7 +8,7 @@ import { TapeSection } from "@/sections/Tape";
 import { TestimonialsSection } from "@/sections/Testimonials";
 export default function Home() {
   return (
-    <div>
+    <main>
       <Header />
       <HeroSection />
       <ProjectsSection />
@@ -17,6 +17,6 @@ export default function Home() {
       <AboutSection />
       <ContactSection />
       <Footer />
-    </div>
+    </main>
   );
 }

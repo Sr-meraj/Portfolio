@@ -1,40 +1,46 @@
+"use client";
 import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
 import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
-import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
+import equinax from "@/assets/images/equinax.jpg";
+import value2Investments from "@/assets/images/value2investments.jpg";
 import Image from "next/image";
 
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import CheckIcon from "@/assets/icons/check-circle.svg";
 import Card from "@/components/Card";
 import SectionHeader from "@/components/SectionHeader";
+import { useState } from "react";
 const portfolioProjects = [
   {
     company: "Acme Corp",
     year: "2022",
+    category: "SaaS",
     title: "Dark Saas Landing Page",
     results: [
       { title: "Enhanced user experience by 40%" },
       { title: "Improved site speed by 50%" },
       { title: "Increased mobile traffic by 35%" },
     ],
-    link: "https://youtu.be/4k7IdSLxh6w",
+    link: "https://siyamurrahmanmeraj.netlify.com",
     image: darkSaasLandingPage,
   },
   {
-    company: "Innovative Co",
-    year: "2021",
-    title: "Light Saas Landing Page",
+    company: "Equinax",
+    year: "2024",
+    category: "Consultancy",
+    title: "Project management consultancy",
     results: [
       { title: "Boosted sales by 20%" },
       { title: "Expanded customer reach by 35%" },
       { title: "Increased brand awareness by 15%" },
     ],
-    link: "https://youtu.be/7hi5zwO75yc",
-    image: lightSaasLandingPage,
+    link: "https://equinoxbali.com/",
+    image: equinax,
   },
   {
     company: "Quantum Dynamics",
     year: "2023",
+    category: "AI",
     title: "AI Startup Landing Page",
     results: [
       { title: "Enhanced user experience by 40%" },
@@ -44,9 +50,38 @@ const portfolioProjects = [
     link: "https://youtu.be/Z7I5uSRHMHg",
     image: aiStartupLandingPage,
   },
+  {
+    company: "Value2Investments",
+    year: "2023",
+    category: "Finance",
+    title: "Investment Landing Page",
+    results: [
+      { title: "Enhanced user experience by 80%" },
+      { title: "Improved site speed by 50%" },
+      { title: "Increased mobile traffic by 65%" },
+    ],
+    link: "https://www.value2investments.com",
+    image: value2Investments,
+  },
 ];
 
 export const ProjectsSection = () => {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  // Derive unique categories for filter buttons
+  const categories = [
+    "All",
+    ...new Set(portfolioProjects.map((project) => project.category)),
+  ];
+
+  // Filter projects based on active category
+  const filteredProjects =
+    selectedCategory === "All"
+      ? portfolioProjects
+      : portfolioProjects.filter(
+          (project) => project.category === selectedCategory
+        );
+
   return (
     <section
       className="pb-16 lg:py-24"
@@ -58,9 +93,25 @@ export const ProjectsSection = () => {
           title="Featured Projects"
           description="See how I transformed concepts into engaging digital experiences."
         />
+        {/* Filter Tabs */}
+        <div className="flex justify-center gap-4 my-8">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              className={`px-4 py-2 rounded-full ${
+                selectedCategory === category
+                  ? "bg-emerald-500 text-white"
+                  : "bg-gray-200 text-gray-800"
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
 
         <div className="flex flex-col mt-10 md:mt-20 gap-20">
-          {portfolioProjects.map((project, projectIndex) => (
+          {filteredProjects.map((project, projectIndex) => (
             <Card
               key={project.title}
               className={

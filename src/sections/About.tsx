@@ -3,8 +3,17 @@ import ChromeIcon from "@/assets/icons/chrome.svg";
 import CssIcon from "@/assets/icons/css3.svg";
 import GithubIcon from "@/assets/icons/github.svg";
 import HTMLIcon from "@/assets/icons/html5.svg";
+import MongoDBIcon from "@/assets/icons/MongoDB.svg";
+import MySQLIcon from "@/assets/icons/MySQL.svg";
+import NextjsIcon from "@/assets/icons/Next.js.svg";
+import NodeJsIcon from "@/assets/icons/Node.js.svg";
+import PostmanIcon from "@/assets/icons/Postman.svg";
 import ReactIcon from "@/assets/icons/react.svg";
 import JavascriptIcon from "@/assets/icons/square-js.svg";
+import TailwindCSSIcon from "@/assets/icons/TailwindCSS.svg";
+import WebflowIcon from "@/assets/icons/Webflow.svg";
+import WordpressIcon from "@/assets/icons/wordpress.svg";
+
 import bookImage from "@/assets/images/book-cover.png";
 import mapImage from "@/assets/images/map.png";
 import smileMemoji from "@/assets/images/memoji-smile.png";
@@ -18,10 +27,6 @@ import { useRef } from "react";
 
 const toolBoxItems = [
   {
-    title: "JavaScript",
-    iconType: JavascriptIcon,
-  },
-  {
     title: "HTML5",
     iconType: HTMLIcon,
   },
@@ -30,8 +35,44 @@ const toolBoxItems = [
     iconType: CssIcon,
   },
   {
+    title: "TailwindCSS",
+    iconType: TailwindCSSIcon,
+  },
+  {
     title: "React",
     iconType: ReactIcon,
+  },
+  {
+    title: "JavaScript",
+    iconType: JavascriptIcon,
+  },
+  {
+    title: "MongoDB",
+    iconType: MongoDBIcon,
+  },
+  {
+    title: "MySQL",
+    iconType: MySQLIcon,
+  },
+  {
+    title: "NodeJs",
+    iconType: NodeJsIcon,
+  },
+  {
+    title: "Nextjs",
+    iconType: NextjsIcon,
+  },
+  {
+    title: "Postman",
+    iconType: PostmanIcon,
+  },
+  {
+    title: "Webflow",
+    iconType: WebflowIcon,
+  },
+  {
+    title: "Wordpress",
+    iconType: WordpressIcon,
   },
   {
     title: "Chrome",
